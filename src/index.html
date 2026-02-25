@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flora</title>
+    <link rel="stylesheet" href="./src/css/style.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <div class="container">
+        <nav class="nav">
+          <a class="logo" href="./index.html" aria-label="Flora home">
+            flora
+          </a>
+
+          <button class="nav__burger" type="button" aria-label="Open menu">
+            <!-- svg icon later -->
+            ☰
+          </button>
+
+          <!-- мобільне меню (поки просто розмітка) -->
+          <div class="mobile-menu" hidden>
+            <button class="mobile-menu__close" type="button" aria-label="Close menu">×</button>
+            <ul class="mobile-menu__list">
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#bestsellers">Bestsellers</a></li>
+              <li><a href="#bouquets">Bouquets</a></li>
+              <li><a href="#feedback">Feedback</a></li>
+              <li><a href="#contacts">Contacts</a></li>
+            </ul>
+            <a class="btn btn--primary" href="#bouquets">Explore Bouquets</a>
+          </div>
+        </nav>
+
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero__content">
+            <h1 class="hero__title" id="hero-title">
+              Brighten Your Day with Our Stunning Bouquets
+            </h1>
+
+            <p class="hero__text">
+              At Flora, we believe that every occasion deserves a beautiful bouquet...
+            </p>
+
+            <a class="btn btn--primary" href="#bestsellers">Explore Our Bestsellers</a>
+          </div>
+
+          <!-- ВАЖЛИВО: цю картинку краще зробити або background, або <img> як декор -->
+          <div class="hero__media" aria-hidden="true"></div>
+        </section>
+      </div>
+    </header>
+
+    <main>
+      <section class="layout" id="about"></section>
+
+      <section class="products products--featured" id="bestsellers"></section>
+
+      <section class="products products--catalog" id="bouquets"></section>
+
+      <section class="testimonial" id="feedback"></section>
+
+      <section class="contact" id="contacts"></section>
+    </main>
+
+    <footer class="footer"></footer>
+  </body>
+</html>
