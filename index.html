@@ -3,67 +3,205 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Flora</title>
-    <link rel="stylesheet" href="./src/css/style.css" />
+    <!-- <title>Flora</title> -->
+    <!-- <link rel="stylesheet" href="./src/css/style.css" /> -->
   </head>
   <body>
     <header class="page-header">
-      <div class="container">
-        <nav class="nav">
-          <a class="logo" href="./index.html" aria-label="Flora home">
-            flora
-          </a>
+      <a href="#"><img src=" ./src/images/Company-logo.png" alt="Companylogo" /></a> 
+      <nav class="nav">        
+        <a href="#about">About Us</a>
+        <a href="#advantages">Bestsellers</a>
+        <a href="/catalogues">Bouquets</a>
+        <a href="/feedback">Feedback</a>       
+        <a href="/contacts">Contacts</a> 
+      </nav>
+       <button class="header-btn" type="button">Explore Bouquets
 
-          <button class="nav__burger" type="button" aria-label="Open menu">
-            <!-- svg icon later -->
-            ☰
-          </button>
-
-          <!-- мобільне меню (поки просто розмітка) -->
-          <div class="mobile-menu" hidden>
-            <button class="mobile-menu__close" type="button" aria-label="Close menu">×</button>
-            <ul class="mobile-menu__list">
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#bestsellers">Bestsellers</a></li>
-              <li><a href="#bouquets">Bouquets</a></li>
-              <li><a href="#feedback">Feedback</a></li>
-              <li><a href="#contacts">Contacts</a></li>
-            </ul>
-            <a class="btn btn--primary" href="#bouquets">Explore Bouquets</a>
-          </div>
-        </nav>
-
-        <section class="hero" aria-labelledby="hero-title">
-          <div class="hero__content">
-            <h1 class="hero__title" id="hero-title">
-              Brighten Your Day with Our Stunning Bouquets
-            </h1>
+       </button>
+    </header>       
+     <main>
+        <section id="hero" class="hero">          
+          <h1>
+             Brighten Your Day with Our Stunning Bouquets        
+           </h1>
 
             <p class="hero__text">
               At Flora, we believe that every occasion deserves a beautiful bouquet...
             </p>
 
-            <a class="btn btn--primary" href="#bestsellers">Explore Our Bestsellers</a>
-          </div>
+            <button class="header-btn" type="button">Explore Our Bestsellers
+
+            </button>
+          
 
           <!-- ВАЖЛИВО: цю картинку краще зробити або background, або <img> як декор -->
-          <div class="hero__media" aria-hidden="true"></div>
-        </section>
-      </div>
-    </header>
+         
+        </section>   
+        
+      <section id="about">
+        <img src="./src/images/elevated-view-female-florist-arranging-white-peony-flowers-shop Large.jpg  " alt="florist-arranging-flowers">
+         <h2>Our Passion for Floral Artistry</h2>
+        <p>
+          At Flora, we believe that every bouquet tells a story.
+           Our team meticulously crafts each arrangement, 
+           blending creativity with the freshest blooms to create stunning pieces for every occasion.
+        </p>
+      </section>
 
-    <main>
-      <section class="layout" id="about"></section>
+      <section id="advantages">
+        <h2>Top-Selling Bouquets</h2>
+        <ul>
+          <li><svg><use href="#icon-bouquet"></use></svg></li>
+          <h3>Spring Elegance</h3>
+          <p>A delicate blend of peonies, tulips, and roses — perfect for springtime gifting and bright smiles.</p>
+        </ul>
+        <ul>
+            <li><svg><use href="#icon-bouquet"></use></svg></li>
+            <h3>Berry Chic</h3>
+            <p>A stylish composition of roses, seasonal greenery, and vibrant berries — a bold and elegant floral statement.</p>
+        </ul>
+          <ul>
+            <li><svg><use href="#icon-bouquet"></use></svg></li>
+            <h3>Lavender Dream</h3>
+            <p>A rich bouquet with lavender, lisianthus, and roses — ideal for those who love deep hues and gentle fragrance.</p>
+          </ul>
+      </section>
+      <section id="catalogues">
+        <h2>Bouquets</h2>
+        <p>Explore our stunning selection of fresh flower bouquets.</p>
+        <label for="filtre">фільтер лейбл</label>
+        <select name="filtre" id="filtre">
+            <option value="all">всі</option>
+            <option value="top">Тіп</option>
+            <option value="standart">Стандарт</option>            
+        </select>
+        <ul>
+          <li class="product-card">
+            <a href="#" class="product-card_link">
+            <img src="src/images/side-view-rose-bouquet-with-wildflowers-pink-basket.png" alt="">
+            <h4>Peach Meadow</h4>
+            <p>A soft and radiant arrangement of peach and blush roses with lush greenery in a straw basket — light and natural.</p>
+            <p>$55</p>
+            <button></button>
+            </a>
+          </li>
+          <li class="product-card">
+            <a href="#" class="product-card_link">
+            <img src="src/images/florist-makes-beautiful-bouquet-studio.png" alt="">            
+            <h4>Blush Romance</h4>
+            <p>A premium bouquet of deep pink and ivory roses, complemented by silver eucalyptus — sophisticated and intimate.</p>
+            <p>$34</p>
+            <button></button>
+            </a>
+            
+          </li>
+          <li>
+            <img src="src/images/big-basket-mixed-flowers-standing-table-with-christmas-cones.png" alt="">
+            <h4>Pastel Garden</h4>
+            <p>A pastel-toned mix of spray roses and greenery in a woven basket — gentle, airy, and perfect for any occasion.</p>
+            <p>$40</p>
+            <button></button>
+          </li>
+          <li>
+            <img src="src/images/mixed-flower-composition-side-view.png" alt="">
+            <h4>Tulip Charm</h4>
+            <p>A vivid bouquet of bright tulips and roses in a lavender box — cheerful and full of charm.</p>
+            <p>$61</p>
+            <button></button>
+          </li>
+          <li>
+            <img src="src/images/exotic-rustic-bunch-flowers-mixed-colors.png" alt="">
+            <h4>Berry Bloom</h4>
+            <p>A lush mix of rich pink, purple, and cream blooms with textured greens — romantic and elegant.</p>
+            <p>$32</p>
+            <button></button>
+          </li>
+          <li>
+            <img src="src/images/basket-filled-with-assorted-colorful-flowers-notecard.png" alt="">
+            <h4>Sweet Whisper</h4>
+            <p>A charming spring bouquet with peonies, roses, and lilac-toned accents — fresh, lively, and expressive.</p>
+            <p>$40</p>
+            <button></button>
+          </li>
+          <li>
+            <img src="src/images/wild-flowers.png" alt="">
+            <h4>Field Joy</h4>
+            <p>A rustic hand-tied bouquet of sunflowers, lisianthus, and daisies — perfect for brightening the day.</p>
+            <p>$49</p>
+            <button></button>
+          </li>
+          <li>
+            <img src="src/images/close-up-bouquet-decorated-vintage-style-dark-background.png" alt="">
+            <h4>Soft Bloom</h4>
+            <p>A delicate bouquet of pink carnations and roses wrapped in satin paper — soft, stylish, and versatile.</p>
+            <p>$37</p>
+            <button></button>
+          </li>                                   
+        </ul>
+        <button type="button">Show More</button>
 
-      <section class="products products--featured" id="bestsellers"></section>
+      </section>
+      <section id="feedback">
+        <h2>What our clients says</h2>
+        <ul>
+          <li>
+            <p>Flora made my anniversary unforgettable with their beautiful arrangement!</p>
+            <h4>Emma T.</h4>
+          </li>
+          <li>
+            <p>Absolutely stunning bouquet! It looked even better than the photo and arrived right on time.</p>
+            <h4>Daniel R.</h4>
+          </li>
+          <li>
+            <p>The service was exceptional, and the flowers were fresh!</p>
+            <h4>Olivia M.</h4>
+          </li>
+        </ul>
+        <button type="button">
+          <svg><use href="#src/icons/Direction=Left, State=Normal.svg"></use></svg>
+        </button>
+        <button type="button">
+          <svg><use href="#src/icons/Direction=Right, State=Normal.svg"></use></svg>
+        </button>
+      </section>
+      <section id="contacts">
+        <p>Connect</p>
+        <h2>Get in Touch</h2>
+        <p>We’re here to assist you with all your floral needs and inquiries.</p>
+        <ul>
+          <li>
+            <svg><use href="src/icons/phone.svg"></use></svg>
+            <p>Phone</p>
+            <a href="+1 (555) 123-4567 ">+1 (555) 123-4567</a>
+          </li>
+          <li>
+            <svg><use href="src/icons/map.svg"></use></svg>
+            <p>Store</p>
+            <a href="456 Floral Ave, Sydney NSW 2000 AU ">456 Floral Ave, Sydney NSW 2000 AU </a>
+          </li>
+        </ul>
+        <img src="src/images/photo-florist-holding-beautiful-flowers-flower-shop.png" alt="Florist holding beautiful flowers">
+      </section>
 
-      <section class="products products--catalog" id="bouquets"></section>
-
-      <section class="testimonial" id="feedback"></section>
-
-      <section class="contact" id="contacts"></section>
     </main>
 
-    <footer class="footer"></footer>
+    <footer class="footer">
+      <a href="#"><img src="src/images/Logo.png" alt="Flora Logo"></a>
+        <nav class="nav">
+          <a href="#about">About Us</a>
+          <a href="#advantages">Bestsellers</a>
+          <a href="#catalogues">Bouquets</a>
+          <a href="#feedback">Feedback</a>
+          <a href="#contacts">Contacts</a>
+        </nav>
+        <ul>
+          <li><svg><use href="src/icons/Facebook.svg"></use></svg><a href="src/icons/Facebook.svg" target="_blank">Facebook</a></li>
+          <li><svg><use href="src/icons/Instagram.svg"></use></svg><a href="src/icons/Instagram.svg" target="_blank">Instagram</a></li>
+          <li><svg><use href="src/icons/X.svg"></use></svg><a href="src/icons/Twitter.svg" target="_blank">Twitter</a></li>
+        </ul>
+    </footer> 
   </body>
-</html>
+</html> 
+
+
