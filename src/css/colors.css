@@ -1,0 +1,13 @@
+:root {
+  --primary-bg: #ffffff;
+  --primary-text: #030C01;
+
+  /* button */
+  --button-bg: #42ED13;
+  --button-hover-bg: #E8E81C;
+
+  /* додано для style.css */
+  --primary-button-bg: #42ED13;
+  --primary-button-border-color:#E8E81C;
+  --regular:16px;
+}
