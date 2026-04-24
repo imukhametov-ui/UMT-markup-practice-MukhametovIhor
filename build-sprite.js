@@ -1,37 +1,44 @@
 const fs = require('fs');
 const path = require('path');
-const SVGSpriter = require('svg-sprite');
-
-const spriter = new SVGSpriter({
-  mode: {
-    symbol: {
-      dest: '.',
-      sprite: 'sprite.svg',
-    },
-  },
-});
 
 const iconsDir = './src/icons';
+const output = './src/icons/sprite.svg';
+
+let symbols = '';
 
 fs.readdirSync(iconsDir).forEach(file => {
-  const filePath = path.join(iconsDir, file);
+  if (path.extname(file) !== '.svg' || file === 'sprite.svg') return;
 
-  if (path.extname(file) === '.svg' && file !== 'sprite.svg') {
-    spriter.add(filePath, file, fs.readFileSync(filePath, 'utf-8'));
-  }
+  const id = file
+    .replace('.svg', '')
+    .replace(/[^a-zA-Z0-9]/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '')
+    .toLowerCase();
+
+  let content = fs.readFileSync(path.join(iconsDir, file), 'utf-8');
+
+  // Витягуємо атрибути viewBox
+  const viewBox = (content.match(/viewBox="([^"]*)"/) || ['', '0 0 24 24'])[1];
+
+  // Прибираємо зовнішній svg тег
+  content = content
+    .replace(/<\?xml[^>]*>/g, '')
+    .replace(/<!DOCTYPE[^>]*>/g, '')
+    .replace(/<svg[^>]*>/g, '')
+    .replace(/<\/svg>/g, '')
+    .trim();
+
+  symbols += `  <symbol id="${id}" viewBox="${viewBox}">\n    ${content}\n  </symbol>\n`;
 });
 
-spriter.compile((error, result) => {
-  if (error) {
-    console.error(error);
-    return;
-  }
+const sprite = `<svg xmlns="http://www.w3.org/2000/svg" style="display:none">\n${symbols}</svg>\n`;
+fs.writeFileSync(output, sprite);
+console.log('✅ sprite.svg created! Icons:');
 
-  for (const mode in result) {
-    for (const resource in result[mode]) {
-      fs.writeFileSync('./src/icons/sprite.svg', result[mode][resource].contents);
-    }
-  }
-
-  console.log('sprite.svg created successfully');
+// Вивести список id для зручності
+fs.readdirSync(iconsDir).forEach(file => {
+  if (path.extname(file) !== '.svg' || file === 'sprite.svg') return;
+  const id = file.replace('.svg','').replace(/[^a-zA-Z0-9]/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'').toLowerCase();
+  console.log(`  #${id}  ←  ${file}`);
 });

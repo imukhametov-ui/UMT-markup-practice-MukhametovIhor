@@ -256,86 +256,126 @@
     </div>
   </div>
 </div>
-      <section id="feedback">
-        <h2>What our clients says</h2>
-        <ul>
-          <li>
-            <p>Flora made my anniversary unforgettable with their beautiful arrangement!</p>
-            <h4>Emma T.</h4>
-          </li>
-          <li>
-            <p>Absolutely stunning bouquet! It looked even better than the photo and arrived right on time.</p>
-            <h4>Daniel R.</h4>
-          </li>
-          <li>
-            <p>The service was exceptional, and the flowers were fresh!</p>
-            <h4>Olivia M.</h4>
-          </li>
-        </ul>
-        <ul>
-          <li style="display: flex; gap: 8px; margin: 24px; list-style: none;">
-            <span style="width: 7px; height: 7px; background-color: #111; border-radius: 50%;"></span>
-            <span style="width: 7px; height: 7px; background-color: #ccc; border-radius: 50%;"></span>
-            <span style="width: 7px; height: 7px; background-color: #ccc; border-radius: 50%;"></span>
-            <span style="width: 7px; height: 7px; background-color: #ccc; border-radius: 50%;"></span>
-            <span style="width: 7px; height: 7px; background-color: #ccc; border-radius: 50%;"></span>
-            <span style="width: 7px; height: 7px; background-color: #ccc; border-radius: 50%;"></span>            
-          </li>
-        </ul>
-        <ul>
-          <li> 
-        <button type="button">
-          <svg><use href="#src/icons/Direction=Left, State=Normal.svg"></use></svg>
-        </button>
+<div class="form-modal" id="formModal" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="form-modal__overlay"></div>
+  <div class="form-modal__content">
+    <button class="form-modal__close" type="button" aria-label="Close">&#10005;</button>
+    <h3 class="form-modal__title">Order</h3>
+    <form class="form-modal__form">
+      <label class="form-modal__label">Name*
+        <input class="form-modal__input" type="text" placeholder="Ann" required>
+      </label>
+      <label class="form-modal__label">Phone*
+        <input class="form-modal__input" type="tel" placeholder="+1 (555) 123-4567" required>
+      </label>
+      <label class="form-modal__label">Address
+        <input class="form-modal__input" type="text" placeholder="456 Floral Ave, Sydney NSW 2000 AU">
+      </label>
+      <label class="form-modal__label">Message
+        <textarea class="form-modal__input form-modal__textarea" placeholder="Type your message..."></textarea>
+      </label>
+      <button class="header-btn-big form-modal__submit" type="submit">Go to Checkout</button>
+    </form>
+  </div>
+</div>
+      <section id="feedback" class="feedback">
+  <div class="container">
+    <h2 class="feedback__title">What our clients says</h2>
+    <div class="feedback__slider">
+      <ul class="feedback__list">
+        <li class="feedback__item">
+          <p class="feedback__text">Flora made my anniversary unforgettable with their beautiful arrangement!</p>
+          <h4 class="feedback__author">Emma T.</h4>
         </li>
-        <li> 
-        <button type="button">
-          <svg><use href="#src/icons/Direction=Right, State=Normal.svg"></use></svg>
-        </button>
+        <li class="feedback__item">
+          <p class="feedback__text">Absolutely stunning bouquet! It looked even better than the photo and arrived right on time.</p>
+          <h4 class="feedback__author">Daniel R.</h4>
         </li>
-        </ul>
-      </section>
-      <section id="contacts">
-        <p>Connect</p>
-        <h2>Get in Touch</h2>
-        <p>We’re here to assist you with all your floral needs and inquiries.</p>
-        <ul>
-          <li>
-            <svg><use href="src/icons/phone.svg"></use></svg>
-            <p>Phone</p>
-            <a href="+1 (555) 123-4567 ">+1 (555) 123-4567</a>
-          </li>
-          <li>
-            <svg><use href="src/icons/map.svg"></use></svg>
-            <p>Store</p>
-            <a href="456 Floral Ave, Sydney NSW 2000 AU ">456 Floral Ave, Sydney NSW 2000 AU </a>
-          </li>
-        </ul>
-        <img src="src/images/photo-florist-holding-beautiful-flowers-flower-shop.png" alt="Florist holding beautiful flowers">
-      </section>
+        <li class="feedback__item">
+          <p class="feedback__text">The service was exceptional, and the flowers were fresh!</p>
+          <h4 class="feedback__author">Olivia M.</h4>
+        </li>
+      </ul>
+    </div>
+    <div class="feedback__controls">
+      <ul class="feedback__dots">
+        <li class="feedback__dot feedback__dot--active"></li>
+        <li class="feedback__dot"></li>
+        <li class="feedback__dot"></li>
+      </ul>
+      <div class="feedback__arrows">
+        <button class="feedback__arrow" type="button" aria-label="Feedback Previous">&#8592;</button>
+        <button class="feedback__arrow" type="button" aria-label="Feedback Next">&#8594;</button>
+      </div>
+    </div>
+  </div>
+</section>
+      <section id="contacts" class="contacts">
+  <div class="container">
+    <div class="contacts__header">
+      <div class="contacts__info">
+        <p class="contacts__label">Connect</p>
+        <h2 class="contacts__title">Get in Touch</h2>
+        <p class="contacts__desc text">We're here to assist you with all your floral needs and inquiries.</p>
+      </div>
+      <ul class="contacts__list">
+        <li class="contacts__item">
+          <p class="contacts__item-label">Phone</p>
+          <a class="contacts__link" href="tel:+15551234567">+1 (555) 123-4567</a>
+        </li>
+        <li class="contacts__item">
+          <p class="contacts__item-label">Store</p>
+          <a class="contacts__link" href="https://maps.google.com" target="_blank" rel="noopener">456 Floral Ave, Sydney NSW 2000 AU</a>
+        </li>
+      </ul>
+    </div>
+    <img
+      class="contacts__image"
+      src="src/images/photo-florist-holding-beautiful-flowers-flower-shop.png"
+      alt="Florist holding beautiful flowers in shop"
+      width="1176">
+  </div>
+</section>
 
     </main>
 
-    <footer class="footer">
-      <a href="#">
-        <svg width="294" height="126" viewBox="0 0 294 126" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <use href="src/icons/Company Logo2.svg"></use>
-        </svg>
+   <footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <a class="footer__logo" href="#">
+        <img src="src/images/Logo.png" alt="Flora" width="120" height="52">
       </a>
-      <nav class="nav">
+      <nav class="footer__nav">
         <a href="#about">About Us</a>
-        <a href="#advantages">Bestsellers</a>
+        <a href="#bestsellers">Bestsellers</a>
         <a href="#catalogues">Bouquets</a>
         <a href="#feedback">Feedback</a>
-          <a href="#contacts">Contacts</a>
-        </nav>
-        <ul>
-          <li><svg><use href="src/icons/Facebook.svg"></use></svg><a href="src/icons/Facebook.svg" target="_blank">Facebook</a></li>
-          <li><svg><use href="src/icons/Instagram.svg"></use></svg><a href="src/icons/Instagram.svg" target="_blank">Instagram</a></li>
-          <li><svg><use href="src/icons/X.svg"></use></svg><a href="src/icons/Twitter.svg" target="_blank">Twitter</a></li>
-        </ul>
-        <p>© 2025 Flora. All rights reserved.</p>
-    </footer> 
+        <a href="#contacts">Contacts</a>
+      </nav>
+      <ul class="footer__socials">
+        <li><a href="#" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a></li>
+        <li><a href="#" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+          </svg>
+        </a></li>
+        <li><a href="#" target="_blank" rel="noopener" aria-label="X / Twitter">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+        </a></li>
+      </ul>
+    </div>
+    <p class="footer__copy">© 2025 Flora. All rights reserved.</p>
+  </div>
+</footer>
     <script>
   // Burger menu
   const burgerBtn = document.querySelector('.burger-btn');
@@ -398,6 +438,44 @@
   nextBtn.addEventListener('click', () => { current++; updateSlider(); });
   window.addEventListener('resize', updateSlider);
   updateSlider(); 
+  // ===== FEEDBACK SLIDER =====
+const feedbackSlider = document.querySelector('.feedback__slider');
+const feedbackList   = document.querySelector('.feedback__list');
+const feedbackItems  = document.querySelectorAll('.feedback__item');
+const feedbackDots   = document.querySelectorAll('.feedback__dot');
+const feedbackPrev   = document.querySelector('[aria-label="Feedback Previous"]');
+const feedbackNext   = document.querySelector('[aria-label="Feedback Next"]');
+
+let feedbackCurrent = 0;
+
+function getFeedbackVisible() {
+  if (window.innerWidth >= 1200) return 3;
+  if (window.innerWidth >= 768)  return 2;
+  return 1;
+}
+
+function updateFeedbackSlider() {
+  const visible = getFeedbackVisible();
+  const max = feedbackItems.length - visible;
+  feedbackCurrent = Math.max(0, Math.min(feedbackCurrent, max));
+
+  const totalWidth = feedbackSlider.offsetWidth;
+  const itemWidth  = (totalWidth - 24 * (visible - 1)) / visible;
+
+  feedbackItems.forEach(item => { item.style.width = itemWidth + 'px'; });
+
+  const offset = feedbackCurrent * (itemWidth + 24);
+  feedbackList.style.transform = `translateX(-${offset}px)`;
+
+  feedbackDots.forEach((dot, i) => {
+    dot.classList.toggle('feedback__dot--active', i === feedbackCurrent);
+  });
+}
+
+feedbackPrev.addEventListener('click', () => { feedbackCurrent--; updateFeedbackSlider(); });
+feedbackNext.addEventListener('click', () => { feedbackCurrent++; updateFeedbackSlider(); });
+window.addEventListener('resize', updateFeedbackSlider);
+updateFeedbackSlider();
   // ===== ORDER MODAL =====
 const orderModal = document.getElementById('orderModal');
 const modalImage = document.getElementById('modalImage');
@@ -423,7 +501,28 @@ function closeModal() {
   orderModal.classList.remove('is-open');
   document.body.style.overflow = '';
 }
+const formModal = document.getElementById('formModal');
+const formClose = document.querySelector('.form-modal__close');
+const formOverlay = document.querySelector('.form-modal__overlay');
+const formEl = document.querySelector('.form-modal__form');
 
+document.querySelector('.order-modal__buy').addEventListener('click', () => {
+  closeModal();
+  formModal.classList.add('is-open');
+  document.body.style.overflow = 'hidden';
+});
+
+function closeFormModal() {
+  formModal.classList.remove('is-open');
+  document.body.style.overflow = '';
+}
+
+formClose.addEventListener('click', closeFormModal);
+formOverlay.addEventListener('click', closeFormModal);
+formEl.addEventListener('submit', e => {
+  e.preventDefault();
+  closeFormModal();
+});
 modalClose.addEventListener('click', closeModal);
 modalOverlay.addEventListener('click', closeModal);
 document.addEventListener('keydown', e => {
