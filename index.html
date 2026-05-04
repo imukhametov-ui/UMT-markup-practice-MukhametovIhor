@@ -111,7 +111,7 @@
                   alt="Spring Elegance bouquet"
                   width="400"
                 />
-                <h3 class="bestsellers__name">Spring Elegance</h3>
+                <span class="bestsellers__name">Spring Elegance</span>
                 <p class="bestsellers__desc">
                   A delicate blend of peonies, tulips, and roses — perfect for
                   springtime gifting and bright smiles.
@@ -125,7 +125,7 @@
                   alt="Berry Chic bouquet"
                   width="400"
                 />
-                <h3 class="bestsellers__name">Berry Chic</h3>
+                <span class="bestsellers__name">Berry Chic</span>
                 <p class="bestsellers__desc">
                   A stylish composition of roses, seasonal greenery, and vibrant
                   berries — a bold and elegant floral statement.
@@ -139,7 +139,7 @@
                   alt="Lavender Dream bouquet"
                   width="400"
                 />
-                <h3 class="bestsellers__name">Lavender Dream</h3>
+                <span class="bestsellers__name">Lavender Dream</span>
                 <p class="bestsellers__desc">
                   A rich bouquet with lavender, lisianthus, and roses — ideal
                   for those who love deep hues and gentle fragrance.
@@ -150,7 +150,7 @@
   <img class="bestsellers__image"
     src="src/images/side-view-rose-bouquet-with-wildflowers-pink-basket.png"
     alt="Peach Meadow bouquet" width="400">
-  <h3 class="bestsellers__name">Peach Meadow</h3>
+  <span class="bestsellers__name">Peach Meadow</span>
   <p class="bestsellers__desc">A soft and radiant arrangement of peach and blush roses in a straw basket.</p>
   <p class="bestsellers__price">$55</p>
 </li>
@@ -158,7 +158,7 @@
   <img class="bestsellers__image"
     src="src/images/exotic-rustic-bunch-flowers-mixed-colors.png"
     alt="Berry Bloom bouquet" width="400">
-  <h3 class="bestsellers__name">Berry Bloom</h3>
+  <span class="bestsellers__name">Berry Bloom</span>
   <p class="bestsellers__desc">A lush mix of rich pink, purple, and cream blooms — romantic and elegant.</p>
   <p class="bestsellers__price">$32</p>
 </li>
@@ -166,7 +166,7 @@
   <img class="bestsellers__image"
     src="src/images/wild-flowers.png"
     alt="Field Joy bouquet" width="400">
-  <h3 class="bestsellers__name">Field Joy</h3>
+  <span class="bestsellers__name">Field Joy</span>
   <p class="bestsellers__desc">A rustic hand-tied bouquet of sunflowers, lisianthus, and daisies.</p>
   <p class="bestsellers__price">$49</p>
 </li>
@@ -245,7 +245,7 @@
                   alt="Blush Romance bouquet"
                   width="296"
                 />
-                <h3 class="product-card__name">Blush Romance</h4>
+                <span class="product-card__name">Blush Romance</span>
                 <span class="product-card__desc"
                   >A premium bouquet of deep pink and ivory roses, complemented
                   by silver eucalyptus — sophisticated and intimate.</span
@@ -268,7 +268,7 @@
                   alt="Pastel Garden bouquet"
                   width="296"
                 />
-                <h3 class="product-card__name">Pastel Garden</h3>
+                <span class="product-card__name">Pastel Garden</span>
                 <span class="product-card__desc"
                   >A pastel-toned mix of spray roses and greenery in a woven
                   basket — gentle, airy, and perfect for any occasion.</span
@@ -291,7 +291,7 @@
                   alt="Tulip Charm bouquet"
                   width="296"
                 />
-                <h3 class="product-card__name">Tulip Charm</h3>
+                <span class="product-card__name">Tulip Charm</span>
                 <span class="product-card__desc"
                   >A vivid bouquet of bright tulips and roses in a lavender box
                   — cheerful and full of charm.</span
@@ -314,7 +314,7 @@
                   alt="Berry Bloom bouquet"
                   width="296"
                 />
-                <h3 class="product-card__name">Berry Bloom</h3>
+                <span class="product-card__name">Berry Bloom</span>
                 <span class="product-card__desc"
                   >A lush mix of rich pink, purple, and cream blooms with
                   textured greens — romantic and elegant.</span
@@ -337,7 +337,7 @@
                   alt="Sweet Whisper bouquet"
                   width="296"
                 />
-                <h3 class="product-card__name">Sweet Whisper</h3>
+                <span class="product-card__name">Sweet Whisper</span>
                 <span class="product-card__desc"
                   >A charming spring bouquet with peonies, roses, and
                   lilac-toned accents — fresh, lively, and expressive.</span
@@ -360,7 +360,7 @@
                   alt="Field Joy bouquet"
                   width="296"
                 />
-                <h3 class="product-card__name">Field Joy</h3>
+                <span class="product-card__name">Field Joy</span>
                 <span class="product-card__desc"
                   >A rustic hand-tied bouquet of sunflowers, lisianthus, and
                   daisies — perfect for brightening the day.</span
@@ -383,7 +383,7 @@
                   alt="Soft Bloom bouquet"
                   width="296"
                 />
-                <h3 class="product-card__name">Soft Bloom</h3>
+                <span class="product-card__name">Soft Bloom</span>
                 <span class="product-card__desc"
                   >A delicate bouquet of pink carnations and roses wrapped in
                   satin paper — soft, stylish, and versatile.</span
@@ -410,15 +410,14 @@
             &#10005;
           </button>
           <div class="order-modal__body">
-            <img
-              class="order-modal__image"
-              src=""
-              alt=""
-              id="modalImage"
-              aria-hidden="true"
+            <img class="order-modal__image"
+  src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+  alt=""
+  id="modalImage"
+  aria-hidden="true">
             />
             <div class="order-modal__info">
-              <h3 class="order-modal__name" id="modalName"></h3>
+              <p class="order-modal__name" id="modalName"></p>
               <span class="order-modal__price" id="modalPrice"></span>
               <p class="order-modal__desc" id="modalDesc"></p>
               <div class="order-modal__actions">
@@ -499,20 +498,20 @@
                   Flora made my anniversary unforgettable with their beautiful
                   arrangement!
                 </p>
-                <h3 class="feedback__author">Emma T.</h3>
+                <span class="feedback__author">Emma T.</span>
               </li>
               <li class="feedback__item">
                 <p class="feedback__text">
                   Absolutely stunning bouquet! It looked even better than the
                   photo and arrived right on time.
                 </p>
-                <h3 class="feedback__author">Daniel R.</h3>
+                <span class="feedback__author">Daniel R.</span>
               </li>
               <li class="feedback__item">
                 <p class="feedback__text">
                   The service was exceptional, and the flowers were fresh!
                 </p>
-                <h3 class="feedback__author">Olivia M.</h3>
+                <span class="feedback__author">Olivia M.</span>
               </li>
             </ul>
           </div>
