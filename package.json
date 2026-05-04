@@ -2,9 +2,11 @@
   "name": "umt-markup-practice-mukhametovihor",
   "version": "1.0.0",
   "scripts": {
-    "sprite": "node build-sprite.js"
+    "sprite": "node build-sprite.js",
+    "format": "prettier --write \"**/*.{html,css,js}\" --ignore-path .gitignore"
   },
   "devDependencies": {
-    "svg-sprite": "^2.0.4"
+    "svg-sprite": "^2.0.4",
+    "prettier": "^3.0.0"
   }
 }

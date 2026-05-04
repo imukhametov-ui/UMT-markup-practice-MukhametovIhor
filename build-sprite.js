@@ -6,7 +6,7 @@ const output = './src/icons/sprite.svg';
 
 let symbols = '';
 
-fs.readdirSync(iconsDir).forEach(file => {
+fs.readdirSync(iconsDir).forEach((file) => {
   if (path.extname(file) !== '.svg' || file === 'sprite.svg') return;
 
   const id = file
@@ -37,8 +37,13 @@ fs.writeFileSync(output, sprite);
 console.log('✅ sprite.svg created! Icons:');
 
 // Вивести список id для зручності
-fs.readdirSync(iconsDir).forEach(file => {
+fs.readdirSync(iconsDir).forEach((file) => {
   if (path.extname(file) !== '.svg' || file === 'sprite.svg') return;
-  const id = file.replace('.svg','').replace(/[^a-zA-Z0-9]/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'').toLowerCase();
+  const id = file
+    .replace('.svg', '')
+    .replace(/[^a-zA-Z0-9]/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '')
+    .toLowerCase();
   console.log(`  #${id}  ←  ${file}`);
 });

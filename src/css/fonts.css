@@ -1,6 +1,5 @@
 :root {
---hero-title: 56px;
---regular: 16px;
---medium: 18px;
-
+  --hero-title: 56px;
+  --regular: 16px;
+  --medium: 18px;
 }
