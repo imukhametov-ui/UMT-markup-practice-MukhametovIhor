@@ -23,7 +23,7 @@ function updateSlider() {
   dots.forEach((dot, i) => dot.classList.toggle('bestsellers__dot--active', i === current));
 }
 
-prevBtn.addEventListener('click', () => { current--; updateSlider(); });
-nextBtn.addEventListener('click', () => { current++; updateSlider(); });
+prevBtn.addEventListener('click', () => { current--; updateSlider();prevBtn.blur(); });
+nextBtn.addEventListener('click', () => { current++; updateSlider();nextBtn.blur(); });
 window.addEventListener('resize', updateSlider);
 updateSlider();
