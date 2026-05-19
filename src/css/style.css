@@ -17,19 +17,27 @@ body {
 }
 
 .container {
-  max-width: 1336px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 20px;
 }
 
+@media (min-width: 375px) {
+  .container {
+    max-width: 375px;
+  }
+}
+
 @media (min-width: 768px) {
   .container {
+    max-width: 768px;
     padding: 0 32px;
   }
 }
 
 @media (min-width: 1200px) {
   .container {
+    max-width: 1280px;
     padding: 0 80px;
   }
 }
@@ -172,6 +180,10 @@ body {
 @media (min-width: 1200px) {
   .nav {
     padding: 0 80px;
+  }
+  .header-btn {
+    padding: 10px 24px;
+    height: 44px;
   }
   .navigation-list {
     display: flex;
