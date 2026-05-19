@@ -127,15 +127,16 @@ body {
 
 .burger-btn {
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  gap: 6px;
   width: 32px;
   height: 32px;
+  padding: 0;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 4px;
+  color: var(--primary-text);
+  flex-shrink: 0;
 }
 .burger-btn span {
   display: block;
@@ -214,14 +215,17 @@ body {
 .mobile-menu__nav {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 4px; /* було 24px або 32px */
   margin-bottom: 40px;
 }
-.mobile-menu__nav a {
-  font-size: 24px;
-  font-weight: 500;
-}
 
+.mobile-menu__nav a {
+  font-family: "Hanuman", serif;
+  font-size: 16px; /* було 20px або 24px — зменшити до стандарту */
+  font-weight: 400;
+  line-height: 24px; /* точно з Figma */
+  display: inline-block;
+}
 /* ===== HERO ===== */
 .hero {
   background-color: #d9d9d9;
@@ -295,6 +299,7 @@ body {
   height: 300px;
   object-fit: cover;
   display: block;
+  border-radius: 16px;
 }
 /* ===== BESTSELLERS ===== */
 .bestsellers {
@@ -334,6 +339,7 @@ body {
   aspect-ratio: 1 / 1;
   object-fit: cover;
   display: block;
+  border-radius: 16px;
 }
 
 .bestsellers__name {
@@ -607,6 +613,7 @@ body {
   aspect-ratio: 1 / 1;
   object-fit: cover;
   display: block;
+  border-radius: 16px;
 }
 
 .product-card__name {
@@ -720,6 +727,7 @@ body {
   max-height: 300px;
   object-fit: cover;
   border-radius: 8px;
+  border-radius: 16px;
 }
 
 .order-modal__name {
@@ -1122,6 +1130,7 @@ body {
 .footer__logo {
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .footer__logo img {
@@ -1156,14 +1165,16 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 32px;
+  height: 32px;
   color: var(--primary-text);
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer__socials a:hover { opacity: 0.6; }
 
 .footer__socials svg {
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
 }
 
 .footer__copy {
@@ -1173,38 +1184,7 @@ body {
 }
 
 @media (min-width: 768px) {
-  .footer__logo img { width: 168px; }
-  .footer__nav {
-    flex-direction: row;
-    gap: 24px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .footer { padding: 48px 0 32px; }
-
-  .footer__top {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 32px;
-    margin-bottom: 24px;
-    text-align: left;
-  }
-
-  .footer__logo { text-align: left; }
-  .footer__logo img { width: 84px; }
-
-  .footer__nav {
-    flex-direction: row;
-    gap: 32px;
-    white-space: nowrap;
-  }
-
-  .footer__copy { text-align: center; }
-}
-
-@media (min-width: 768px) {
+  .footer__logo img { width: 200px; }
   .footer__nav {
     flex-direction: row;
     gap: 24px;
@@ -1227,14 +1207,17 @@ body {
     justify-content: flex-start;
   }
 
-  .footer__logo img {
-    width: 84px;
-  }
+  .footer__logo img { width: 84px; }
 
   .footer__nav {
     flex-direction: row;
     gap: 32px;
     white-space: nowrap;
+  }
+
+  .footer__socials svg {
+    width: 24px;
+    height: 24px;
   }
 
   .footer__copy { text-align: center; }
