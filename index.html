@@ -207,7 +207,7 @@
             Explore our stunning selection of fresh flower bouquets.
           </p>
           <ul class="catalogues__list">
-            <li class="product-card">
+             class="product-card">
               <button
                 class="product-card__btn"
                 type="button"
@@ -229,7 +229,7 @@
                 >
                 <span class="product-card__price">$55</span>
               </button>
-            </li>
+            
             <li class="product-card">
               <button
                 class="product-card__btn"
@@ -435,59 +435,28 @@
           </div>
         </div>
       </div>
-      <div
-        class="form-modal"
-        id="formModal"
-        role="dialog"
-        aria-modal="true"
-        aria-hidden="true"
-      >
-        <div class="form-modal__overlay"></div>
-        <div class="form-modal__content">
-          <button class="form-modal__close" type="button" aria-label="Close">
-            &#10005;
-          </button>
-          <span class="form-modal__title">Order</span>
-          <form class="form-modal__form">
-            <label class="form-modal__label"
-              >Name*
-              <input
-                class="form-modal__input"
-                type="text"
-                placeholder="Ann"
-                required
-              />
-            </label>
-            <label class="form-modal__label"
-              >Phone*
-              <input
-                class="form-modal__input"
-                type="tel"
-                placeholder="+1 (555) 123-4567"
-                required
-              />
-            </label>
-            <label class="form-modal__label"
-              >Address
-              <input
-                class="form-modal__input"
-                type="text"
-                placeholder="456 Floral Ave, Sydney NSW 2000 AU"
-              />
-            </label>
-            <label class="form-modal__label"
-              >Message
-              <textarea
-                class="form-modal__input form-modal__textarea"
-                placeholder="Type your message..."
-              ></textarea>
-            </label>
-            <button class="header-btn-big form-modal__submit" type="submit">
-              Go to Checkout
-            </button>
-          </form>
-        </div>
-      </div>
+      <div class="form-modal" id="formModal" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="form-modal__overlay"></div>
+  <div class="form-modal__content">
+    <button class="form-modal__close" type="button" aria-label="Close">&#10005;</button>
+    <h2 class="form-modal__title">Order</h2>
+    <form class="form-modal__form">
+      <label class="form-modal__label">Name*
+        <input class="form-modal__input" type="text" name="user-name" placeholder="Ann" required />
+      </label>
+      <label class="form-modal__label">Phone*
+        <input class="form-modal__input" type="tel" name="user-phone" placeholder="+1 (555) 123-4567" required />
+      </label>
+      <label class="form-modal__label">Address
+        <input class="form-modal__input" type="text" name="user-address" placeholder="456 Floral Ave, Sydney NSW 2000 AU" />
+      </label>
+      <label class="form-modal__label">Message
+        <textarea class="form-modal__input form-modal__textarea" name="user-message" placeholder="Type your message..."></textarea>
+      </label>
+      <button class="header-btn-big form-modal__submit" type="submit">Go to Checkout</button>
+    </form>
+  </div>
+</div>
       <section id="feedback" class="feedback">
         <div class="container">
           <h2 class="feedback__title">What our clients says</h2>
@@ -659,5 +628,6 @@
 <script src="src/js/slider.js" defer></script>
 <script src="src/js/feedback.js" defer></script>
 <script src="src/js/modal.js" defer></script>
+<script type="module" src="src/js/catalog.js"></script>
   </body>
 </html>
