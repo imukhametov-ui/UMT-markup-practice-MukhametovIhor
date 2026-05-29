@@ -1153,6 +1153,7 @@ body {
 .footer__logo img {
   width: 294px;
   height: auto;
+  display: block;
 }
 
 .footer__nav {
