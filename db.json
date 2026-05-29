@@ -1,60 +1,28 @@
 {
   "bouquets": [
-    {
-      "id": 1,
-      "name": "Peach Meadow",
-      "price": 55,
-      "desc": "A soft and radiant arrangement of peach and blush roses with lush greenery in a straw basket — light and natural.",
-      "img": "src/images/side-view-rose-bouquet-with-wildflowers-pink-basket.png"
-    },
-    {
-      "id": 2,
-      "name": "Blush Romance",
-      "price": 34,
-      "desc": "A premium bouquet of deep pink and ivory roses, complemented by silver eucalyptus — sophisticated and intimate.",
-      "img": "src/images/florist-makes-beautiful-bouquet-studio.png"
-    },
-    {
-      "id": 3,
-      "name": "Pastel Garden",
-      "price": 40,
-      "desc": "A pastel-toned mix of spray roses and greenery in a woven basket — gentle, airy, and perfect for any occasion.",
-      "img": "src/images/big-basket-mixed-flowers-standing-table-with-christmas-cones.png"
-    },
-    {
-      "id": 4,
-      "name": "Tulip Charm",
-      "price": 61,
-      "desc": "A vivid bouquet of bright tulips and roses in a lavender box — cheerful and full of charm.",
-      "img": "src/images/mixed-flower-composition-side-view.png"
-    },
-    {
-      "id": 5,
-      "name": "Berry Bloom",
-      "price": 32,
-      "desc": "A lush mix of rich pink, purple, and cream blooms with textured greens — romantic and elegant.",
-      "img": "src/images/exotic-rustic-bunch-flowers-mixed-colors.png"
-    },
-    {
-      "id": 6,
-      "name": "Sweet Whisper",
-      "price": 40,
-      "desc": "A charming spring bouquet with peonies, roses, and lilac-toned accents — fresh, lively, and expressive.",
-      "img": "src/images/basket-filled-with-assorted-colorful-flowers-notecard.png"
-    },
-    {
-      "id": 7,
-      "name": "Field Joy",
-      "price": 49,
-      "desc": "A rustic hand-tied bouquet of sunflowers, lisianthus, and daisies — perfect for brightening the day.",
-      "img": "src/images/wild-flowers.png"
-    },
-    {
-      "id": 8,
-      "name": "Soft Bloom",
-      "price": 37,
-      "desc": "A delicate bouquet of pink carnations and roses wrapped in satin paper — soft, stylish, and versatile.",
-      "img": "src/images/close-up-bouquet-decorated-vintage-style-dark-background.png"
-    }
+    { "id": 1, "name": "Peach Meadow", "price": 55,
+      "img": "src/images/peach-meadow@1x.webp",
+      "desc": "A soft and radiant arrangement of peach and blush roses with lush greenery in a straw basket — light and natural." },
+    { "id": 2, "name": "Blush Romance", "price": 34,
+      "img": "src/images/blush-romance@1x.webp",
+      "desc": "A premium bouquet of deep pink and ivory roses, complemented by silver eucalyptus — sophisticated and intimate." },
+    { "id": 3, "name": "Pastel Garden", "price": 40,
+      "img": "src/images/pastel-garden@1x.webp",
+      "desc": "A pastel-toned mix of spray roses and greenery in a woven basket — gentle, airy, and perfect for any occasion." },
+    { "id": 4, "name": "Tulip Charm", "price": 61,
+      "img": "src/images/tulip-charm@1x.webp",
+      "desc": "A vivid bouquet of bright tulips and roses in a lavender box — cheerful and full of charm." },
+    { "id": 5, "name": "Berry Bloom", "price": 32,
+      "img": "src/images/berry-bloom@1x.webp",
+      "desc": "A lush mix of rich pink, purple, and cream blooms with textured greens — romantic and elegant." },
+    { "id": 6, "name": "Sweet Whisper", "price": 40,
+      "img": "src/images/sweet-whisper@1x.webp",
+      "desc": "A charming spring bouquet with peonies, roses, and lilac-toned accents — fresh, lively, and expressive." },
+    { "id": 7, "name": "Field Joy", "price": 49,
+      "img": "src/images/field-joy@1x.webp",
+      "desc": "A rustic hand-tied bouquet of sunflowers, lisianthus, and daisies — perfect for brightening the day." },
+    { "id": 8, "name": "Soft Bloom", "price": 37,
+      "img": "src/images/soft-bloom@1x.webp",
+      "desc": "A delicate bouquet of pink carnations and roses wrapped in satin paper — soft, stylish, and versatile." }
   ]
 }

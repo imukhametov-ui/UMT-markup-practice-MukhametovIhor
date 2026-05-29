@@ -241,7 +241,12 @@ body {
 /* ===== HERO ===== */
 .hero {
   background-color: #d9d9d9;
-  background-image: url('../images/hero__media.jpg');
+  background-image: url(../images/hero@1x.webp);
+  @media (min-resolution: 2dppx) {
+  .hero {
+    background-image: url('../images/hero@2x.webp');
+  }
+}
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
