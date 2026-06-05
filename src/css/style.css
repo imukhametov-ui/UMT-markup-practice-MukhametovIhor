@@ -46,6 +46,7 @@ body {
   line-height: 150%;
 }
 
+
 /* ===== BUTTONS ===== */
 .header-btn,
 .header-btn-big {
@@ -61,21 +62,20 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  .header-btn,
-  .header-btn-big {
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .header-btn:hover,
-  .header-btn-big:hover {
-    opacity: 0.85;
-  }
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-  .navigation-list a {
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .navigation-list a:hover {
-    opacity: 0.7;
-  }
+.header-btn:hover,
+.header-btn-big:hover {
+  opacity: 0.85;
+}
+
+/* ===== NAV LINKS HOVER ===== */
+.navigation-list a {
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.navigation-list a:hover {
+  opacity: 0.7;
 }
 
 /* Верхня кнопка — базова (прихована на mobile) */
@@ -123,6 +123,7 @@ body {
   justify-content: space-between;
   height: 72px;
   padding: 0 20px;
+  position: relative;
 }
 
 /* Mobile: тільки лого + бургер */
@@ -170,9 +171,28 @@ body {
 @media (min-width: 768px) {
   .nav {
     padding: 0 32px;
+    justify-content: space-between;
   }
   .nav > .header-btn {
     display: inline-flex;
+    margin-left: auto;
+  }
+}
+@media (min-width: 768px) {
+  .mobile-menu .header-btn-big {
+    display: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  .burger-btn {
+    display: flex;
+  }
+  .nav > .header-btn {
+    display: inline-flex;
+    order: 2;
+  }
+  .burger-btn {
+    order: 3;
   }
 }
 
@@ -181,15 +201,18 @@ body {
   .nav {
     padding: 0 80px;
   }
-  .header-btn {
-    padding: 10px 24px;
-    height: 44px;
-  }
   .navigation-list {
     display: flex;
     align-items: center;
     gap: 32px;
     font-size: 16px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .header-btn {
+    padding: 10px 24px;
+    height: 44px;
   }
   .burger-btn {
     display: none;
@@ -227,26 +250,44 @@ body {
 .mobile-menu__nav {
   display: flex;
   flex-direction: column;
-  gap: 4px; /* було 24px або 32px */
+  align-items: center;     
+  gap: 16px;            
   margin-bottom: 40px;
+  text-align: center;
 }
 
 .mobile-menu__nav a {
-  font-family: "Hanuman", serif;
-  font-size: 16px; /* було 20px або 24px — зменшити до стандарту */
+  font-family: 'Hanuman', serif;
+  font-size: 20px;        
   font-weight: 400;
-  line-height: 24px; /* точно з Figma */
-  display: inline-block;
+  line-height: 150%;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+.mobile-menu > nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.mobile-menu .header-btn-big {
+  width: fit-content;
+
 }
 /* ===== HERO ===== */
 .hero {
+  background-image: url('../images/hero@1x.webp');
   background-color: #d9d9d9;
-  background-image: url(../images/hero@1x.webp);
-  @media (min-resolution: 2dppx) {
+}
+
+@media (min-resolution: 2dppx) {
   .hero {
     background-image: url('../images/hero@2x.webp');
   }
 }
+.hero {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -334,12 +375,14 @@ body {
 /* Slider wrapper — clips overflow */
 .bestsellers__slider {
   overflow: hidden;
+   width: 100%;
   margin-bottom: 32px;
 }
 
 .bestsellers__list {
   display: flex;
   flex-direction: row;
+  flex-wrap: nowrap;
   gap: 24px;
   transition: transform 350ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -415,13 +458,13 @@ body {
 }
 .bestsellers__arrow,
 .feedback__arrow {
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  border: 1px solid var(--primary-text);
+  border: none;
   background: transparent;
   cursor: pointer;
-  font-size: 18px;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -429,9 +472,8 @@ body {
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.bestsellers__arrow:hover {
-  background-color: var(--primary-text);
-  color: var(--primary-bg);
+ .bestsellers__arrow:hover svg use,
+ .feedback__arrow:hover svg use {
 }
 .bestsellers__arrow:focus,
 .feedback__arrow:focus {
@@ -440,9 +482,15 @@ body {
   color: var(--primary-text);
 }
 @media (min-width: 768px) {
-  .bestsellers__item {
-    flex: 0 0 calc(50% - 12px);
-  }
+  /* ===== BESTSELLERS MEDIA ===== */
+@media (min-width: 768px) {
+  .bestsellers__title { font-size: 36px; }
+}
+
+@media (min-width: 1200px) {
+  .bestsellers { padding: 80px 0; }
+  .bestsellers__title { font-size: 40px; }
+}
   .bestsellers__title {
     font-size: 36px;
   }
@@ -452,36 +500,17 @@ body {
   .bestsellers {
     padding: 80px 0;
   }
-  .bestsellers__item {
-    flex: 0 0 calc(33.333% - 16px);
+  .bestsellers__list {
+    flex-wrap: nowrap;
   }
   .bestsellers__title {
     font-size: 40px;
   }
 }
-@media (min-width: 768px) {
-  .bestsellers__item {
-    flex: 0 0 calc(50% - 12px);
-  }
-}
 
-@media (min-width: 1200px) {
-  .bestsellers__item {
-    flex: 0 0 calc(33.333% - 16px);
-  }
-}
+
 /* Tablet */
 @media (min-width: 768px) {
-  .bestsellers__list {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  .bestsellers__item {
-    flex: 0 0 calc(50% - 12px);
-  }
-  .bestsellers__item:nth-child(3) {
-    display: none;
-  }
   .bestsellers__title {
     font-size: 36px;
   }
@@ -493,11 +522,13 @@ body {
     padding: 80px 0;
   }
   .bestsellers__list {
-    flex-wrap: nowrap;
-  }
-  .bestsellers__item {
-    flex: 1;
-  }
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 24px;
+  transition: transform 350ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+  
   .bestsellers__item:nth-child(3) {
     display: flex;
   }
@@ -1144,16 +1175,37 @@ body {
   text-align: center;
 }
 
+.footer .container {
+  padding: 0 20px;
+}
+@media (min-width: 768px) {
+  .footer .container {
+    padding: 0 48px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .footer .container {
+    padding: 0 80px;
+  }
+}
 .footer__logo {
-  display: flex;
-  justify-content: center;
-  width: 100%;
+  display: block;
+  text-align: center;
 }
 
 .footer__logo img {
-  width: 294px;
+  width: 294px; /* точно з Figma для mobile */
   height: auto;
   display: block;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .footer__logo img { width: 200px; }
+}
+@media (min-width: 1200px) {
+  .footer__logo img { width: 84px; }
 }
 
 .footer__nav {

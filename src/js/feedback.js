@@ -23,6 +23,18 @@ function updateFeedbackSlider() {
   feedbackDots.forEach((dot, i) => dot.classList.toggle('feedback__dot--active', i === feedbackCurrent));
 }
 
+function renderDots() {
+  const visible = getVisible();
+  const total = items.length - visible + 1; // реальна кількість позицій
+  const container = document.querySelector('.bestsellers__dots');
+  container.innerHTML = '';
+  for (let i = 0; i < total; i++) {
+    const li = document.createElement('li');
+    li.className = 'bestsellers__dot' + (i === current ? ' bestsellers__dot--active' : '');
+    li.addEventListener('click', () => { current = i; updateSlider(); renderDots(); });
+    container.appendChild(li);
+  }
+}
 feedbackPrev.addEventListener('click', () => { feedbackCurrent--; updateFeedbackSlider();feedbackPrev.blur(); });
 feedbackNext.addEventListener('click', () => { feedbackCurrent++; updateFeedbackSlider();feedbackNext.blur(); });
 window.addEventListener('resize', updateFeedbackSlider);
