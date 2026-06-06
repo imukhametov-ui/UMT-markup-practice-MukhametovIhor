@@ -10,8 +10,9 @@ const formClose = document.querySelector('.form-modal__close');
 const formOverlay = document.querySelector('.form-modal__overlay');
 const formEl = document.querySelector('.form-modal__form');
 
-document.querySelectorAll('.product-card__btn').forEach(btn => {
-  btn.addEventListener('click', () => {
+document.addEventListener('click', e => {
+  const btn = e.target.closest('.product-card__btn');
+  if (!btn) return;
     modalImage.src = btn.dataset.img;
     modalImage.alt = btn.dataset.name;
     modalName.textContent = btn.dataset.name;
@@ -20,7 +21,7 @@ document.querySelectorAll('.product-card__btn').forEach(btn => {
     orderModal.classList.add('is-open');
     document.body.style.overflow = 'hidden';
   });
-});
+
 
 function closeModal() {
   orderModal.classList.remove('is-open');
@@ -37,7 +38,11 @@ function closeFormModal() {
   formModal.classList.remove('is-open');
   document.body.style.overflow = '';
 }
-
+document.querySelectorAll('[href="#catalogues"], .header-btn, .header-btn-big').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelector('#catalogues')?.scrollIntoView({ behavior: 'smooth' });
+  });
+});
 modalClose.addEventListener('click', closeModal);
 modalOverlay.addEventListener('click', closeModal);
 formClose.addEventListener('click', closeFormModal);

@@ -217,7 +217,7 @@
   alt=""
   id="modalImage"
   aria-hidden="true">
-            />
+            
             <div class="order-modal__info">
               <p class="order-modal__name" id="modalName"></p>
               <span class="order-modal__price" id="modalPrice"></span>
@@ -255,6 +255,15 @@
       <label class="form-modal__label">Message
         <textarea class="form-modal__input form-modal__textarea" name="user-message" placeholder="Type your message..."></textarea>
       </label>
+      <label class="form-modal__checkbox">
+  <input class="form-modal__checkbox-input visually-hidden" type="checkbox" name="agreement" required />
+  <span class="form-modal__checkbox-icon">
+    <svg width="16" height="16" viewBox="0 0 16 16">
+      <use href="src/icons/sprite.svg#checkbox-check"></use>
+    </svg>
+  </span>
+  <span class="form-modal__checkbox-label">I agree to the privacy policy</span>
+</label>
       <button class="header-btn-big form-modal__submit" type="submit">Go to Checkout</button>
     </form>
   </div>
@@ -426,6 +435,7 @@
 <script src="src/js/slider.js" defer></script>
 <script src="src/js/feedback.js" defer></script>
 <script src="src/js/modal.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script type="module" src="src/js/catalog.js"></script>
 
   </body>

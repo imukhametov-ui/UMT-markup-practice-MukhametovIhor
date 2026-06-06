@@ -7,11 +7,11 @@
     "api": "json-server --watch db.json --port 3001"
   },
   "devDependencies": {
-    "svg-sprite": "^2.0.4",
+    "json-server": "^0.17.4",
     "prettier": "^3.0.0",
-    "json-server": "^0.17.4"
+    "svg-sprite": "^2.0.4"
   },
   "dependencies": {
-    "axios": "^1.6.0"
+    "axios": "^1.17.0"
   }
 }

@@ -1292,3 +1292,54 @@ body {
 
   .footer__copy { text-align: center; }
 }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+  border: 0;
+}
+
+.form-modal__checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.form-modal__checkbox-icon {
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgba(3, 12, 1, 0.2);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+              background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-modal__checkbox-icon svg {
+  opacity: 0;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-modal__checkbox-input:checked + .form-modal__checkbox-icon {
+  background-color: var(--primary-text);
+  border-color: var(--primary-text);
+}
+
+.form-modal__checkbox-input:checked + .form-modal__checkbox-icon svg {
+  opacity: 1;
+}
+
+.form-modal__checkbox-label {
+  font-size: 14px;
+  color: var(--primary-text);
+}

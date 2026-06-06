@@ -8,6 +8,7 @@ const limit = 4;
 let total = 0;
 
 function createCardMarkup(bouquet) {
+  const img2x = bouquet.img.replace('@1x', '@2x');
   return `
     <li class="product-card">
       <button
@@ -21,6 +22,7 @@ function createCardMarkup(bouquet) {
         <img
           class="product-card__image"
           src="${bouquet.img}"
+          srcset="${bouquet.img} 1x, ${img2x} 2x"
           alt="${bouquet.name} bouquet"
           width="296"
         />
