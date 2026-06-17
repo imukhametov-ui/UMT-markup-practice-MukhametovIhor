@@ -804,7 +804,7 @@ body {
 
 @media (min-width: 768px) {
   .order-modal__content {
-    max-width: 704px;
+    max-width: 640px;
     padding: 64px 32px;
   }
   .order-modal__body {
@@ -971,6 +971,8 @@ body {
   padding: 32px;
   border: 1px solid rgba(3, 12, 1, 0.1);
   border-radius: 16px;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .feedback__text {
@@ -1005,36 +1007,6 @@ body {
 }
 .feedback__dot--active {
   background-color: var(--primary-text);
-}
-
-.feedback__arrows {
-  display: flex;
-  gap: 8px;
-  margin-left: auto;
-}
-
-.feedback__arrow {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition:
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.feedback__arrow:hover svg use {
-  fill: currentColor;
-}
-.feedback__arrow:focus {
-  outline: none;
-  background: transparent;
-  color: var(--primary-text);
 }
 
 @media (min-width: 768px) {
@@ -1150,49 +1122,31 @@ body {
 /* ===== FOOTER ===== */
 .footer {
   background-color: #EEEE60;
-  padding: 64px 0;
+  padding: 48px 0;
+}
+
+.footer .container {
+  padding: 0 20px;
 }
 
 .footer__top {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
-  margin-bottom: 40px;
+  gap: 32px;
+  margin-bottom: 32px;
   text-align: center;
 }
 
-.footer .container {
-  padding: 0 20px;
-}
-@media (min-width: 768px) {
-  .footer .container {
-    padding: 0 48px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .footer .container {
-    padding: 0 80px;
-  }
-}
 .footer__logo {
   display: block;
-  text-align: center;
 }
 
 .footer__logo img {
-  width: 294px; /* точно з Figma для mobile */
+  width: 294px;
   height: auto;
   display: block;
   margin: 0 auto;
-}
-
-@media (min-width: 768px) {
-  .footer__logo img { width: 200px; }
-}
-@media (min-width: 1200px) {
-  .footer__logo img { width: 84px; }
 }
 
 .footer__nav {
@@ -1222,8 +1176,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
   color: var(--primary-text);
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -1241,14 +1193,15 @@ body {
 }
 
 @media (min-width: 768px) {
-  .footer__logo img { width: 200px; }
+  .footer .container {
+    padding: 0 32px;
+  }
+  .footer__logo img {
+    width: 200px;
+  }
   .footer__nav {
     flex-direction: row;
     gap: 24px;
-  }
-  .footer__socials a {
-    width: 24px;
-    height: 24px;
   }
   .footer__socials svg {
     width: 24px;
@@ -1257,34 +1210,60 @@ body {
 }
 
 @media (min-width: 1200px) {
-  .footer { padding: 48px 0 32px; }
-
+  .footer {
+    padding: 0;
+    min-height: 419px;
+  }
+  .footer .container {
+    max-width: 1440px;
+    padding: 64px 80px 80px;
+    display: flex;
+    flex-direction: column;
+    min-height: 419px;
+    position: relative;
+  }
   .footer__top {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: 32px;
+    gap: 0px;
     margin-bottom: 24px;
     text-align: left;
+    position: relative;
+    
   }
-
   .footer__logo {
-    display: flex;
-    align-items: center;
-  }
-
-  .footer__logo img { width: 84px; }
-
-  .footer__nav {
-    flex: 1 1 auto;
-    flex-direction: row;
-    gap: 32px;
-    white-space: nowrap;
-    justify-content: center;
-  }
-
-  .footer__copy { text-align: center; }
+  flex: 0 0 294px;
 }
+  .footer__logo img {
+    width: 294px;
+    height: 126px;
+    margin: 0;
+  }
+  .footer__nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  flex-direction: row;
+  gap: 32px;
+  justify-content: center;
+  white-space: nowrap;
+}
+ .footer__socials {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+  .footer__socials svg {
+    width: 24px;
+    height: 24px;
+  }
+  .footer__copy {
+  text-align: center;
+  margin-top: auto;
+  padding-bottom: 80px;
+}
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
