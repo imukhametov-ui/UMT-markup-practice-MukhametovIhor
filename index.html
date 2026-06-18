@@ -192,8 +192,45 @@
           <p class="catalogues__subtitle text">
             Explore our stunning selection of fresh flower bouquets.
           </p>
+          
+          <!-- Filters & Controls -->
+          <div class="catalogues__controls">
+            <div class="catalogues__filters">
+              <div class="filter-group">
+                <label for="priceRange" class="filter-label">Price Range: <span id="priceValue">$0 - $100</span></label>
+                <input type="range" id="priceRange" class="filter-range" min="0" max="100" value="100" />
+              </div>
+              
+              <div class="filter-group">
+                <label for="sortBy" class="filter-label">Sort by:</label>
+                <select id="sortBy" class="filter-select">
+                  <option value="name-asc">Name (A-Z)</option>
+                  <option value="name-desc">Name (Z-A)</option>
+                  <option value="price-asc">Price (Low-High)</option>
+                  <option value="price-desc">Price (High-Low)</option>
+                </select>
+              </div>
+
+              <div class="filter-group">
+                <label for="searchInput" class="filter-label">Search:</label>
+                <input type="text" id="searchInput" class="filter-input" placeholder="Search bouquets..." />
+              </div>
+
+              <button class="filter-reset" type="button">Reset Filters</button>
+            </div>
+
+            <div class="catalogues__pagination">
+              <span class="pagination-info">Items: <span id="itemsCount">0</span> of <span id="totalCount">0</span></span>
+              <div class="pagination-dots" id="paginationDots"></div>
+            </div>
+          </div>
+
+          <div class="catalogues__loading" id="loadingIndicator" aria-label="Loading bouquets">
+            <div class="loading-spinner"></div>
+          </div>
+
           <ul class="catalogues__list"></ul>
-<button class="catalogues__more" type="button">Show More</button>
+          <button class="catalogues__more" type="button">Show More</button>
           
         </div>
       </section>
