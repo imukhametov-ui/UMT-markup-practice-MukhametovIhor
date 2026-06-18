@@ -21,6 +21,15 @@
     />
     <link rel="stylesheet" href="src/css/reset.css" />
     <link rel="stylesheet" href="src/css/style.css" />
+    <style>
+      .order-modal__divider {
+        display: inline-block;
+        width: 0;
+        height: 28px;
+        border-left: 1px solid rgba(3, 12, 1, 0.15);
+        margin-left: 16px;
+      }
+    </style>
   </head>
   <body>
     <header class="page-header">
@@ -258,6 +267,7 @@
             <div class="order-modal__info">
               <p class="order-modal__name" id="modalName"></p>
               <span class="order-modal__price" id="modalPrice"></span>
+              <span class="order-modal__divider" aria-hidden="true"></span>
               <p class="order-modal__desc" id="modalDesc"></p>
               <div class="order-modal__actions">
                 <button class="header-btn-big order-modal__buy" type="button">
