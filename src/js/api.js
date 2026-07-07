@@ -120,3 +120,16 @@ export async function saveBouquet(bouquetData) {
     throw error;
   }
 }
+export async function fetchTopBouquets(limit = 6) {
+  const response = await axios.get(`${API_URL}/bouquets`);
+  return response.data.slice(0, limit);
+}
+export async function fetchReviews() {
+  const response = await axios.get(`${API_URL}/reviews`);
+  return response.data;
+}
+
+export async function createReview(reviewData) {
+  const response = await axios.post(`${API_URL}/reviews`, reviewData);
+  return response.data;
+}

@@ -114,62 +114,7 @@
         <div class="container">
           <h2 class="bestsellers__title">Top-Selling Bouquets</h2>
           <div class="bestsellers__slider">
-            <ul class="bestsellers__list">
-              <li class="bestsellers__item">
-  <img class="bestsellers__image"
-    src="src/images/spring-elegance@1x.webp"
-    srcset="src/images/spring-elegance@1x.webp 1x, src/images/spring-elegance@2x.webp 2x"
-    alt="Spring Elegance bouquet" width="400">
-  <span class="bestsellers__name">Spring Elegance</span>
-  <p class="bestsellers__desc">A delicate blend of peonies, tulips, and roses — perfect for springtime gifting and bright smiles.</p>
-  <p class="bestsellers__price">$35</p>
-</li>
-<li class="bestsellers__item">
-  <img class="bestsellers__image"
-    src="src/images/berry-chic@1x.webp"
-    srcset="src/images/berry-chic@1x.webp 1x, src/images/berry-chic@2x.webp 2x"
-    alt="Berry Chic bouquet" width="400">
-  <span class="bestsellers__name">Berry Chic</span>
-  <p class="bestsellers__desc">A stylish composition of roses, seasonal greenery, and vibrant berries — a bold and elegant floral statement.</p>
-  <p class="bestsellers__price">$40</p>
-</li>
-<li class="bestsellers__item">
-  <img class="bestsellers__image"
-    src="src/images/lavender-dream@1x.webp"
-    srcset="src/images/lavender-dream@1x.webp 1x, src/images/lavender-dream@2x.webp 2x"
-    alt="Lavender Dream bouquet" width="400">
-  <span class="bestsellers__name">Lavender Dream</span>
-  <p class="bestsellers__desc">A rich bouquet with lavender, lisianthus, and roses — ideal for those who love deep hues and gentle fragrance.</p>
-  <p class="bestsellers__price">$55</p>
-</li>
-<li class="bestsellers__item">
-  <img class="bestsellers__image"
-    src="src/images/peach-meadow@1x.webp"
-    srcset="src/images/peach-meadow@1x.webp 1x, src/images/peach-meadow@2x.webp 2x"
-    alt="Peach Meadow bouquet" width="400">
-  <span class="bestsellers__name">Peach Meadow</span>
-  <p class="bestsellers__desc">A soft and radiant arrangement of peach and blush roses in a straw basket.</p>
-  <p class="bestsellers__price">$55</p>
-</li>
-<li class="bestsellers__item">
-  <img class="bestsellers__image"
-    src="src/images/berry-bloom@1x.webp"
-    srcset="src/images/berry-bloom@1x.webp 1x, src/images/berry-bloom@2x.webp 2x"
-    alt="Berry Bloom bouquet" width="400">
-  <span class="bestsellers__name">Berry Bloom</span>
-  <p class="bestsellers__desc">A lush mix of rich pink, purple, and cream blooms — romantic and elegant.</p>
-  <p class="bestsellers__price">$32</p>
-</li>
-<li class="bestsellers__item">
-  <img class="bestsellers__image"
-    src="src/images/field-joy@1x.webp"
-    srcset="src/images/field-joy@1x.webp 1x, src/images/field-joy@2x.webp 2x"
-    alt="Field Joy bouquet" width="400">
-  <span class="bestsellers__name">Field Joy</span>
-  <p class="bestsellers__desc">A rustic hand-tied bouquet of sunflowers, lisianthus, and daisies.</p>
-  <p class="bestsellers__price">$49</p>
-</li>
-            </ul>
+            <ul class="bestsellers__list"></ul>
           </div>
           <div class="bestsellers__controls">
             <ul class="bestsellers__dots">
@@ -319,42 +264,34 @@
         <div class="container">
           <h2 class="feedback__title">What our clients says</h2>
           <div class="feedback__slider">
-            <ul class="feedback__list">
-              <li class="feedback__item">
-                <p class="feedback__text">
-                  Flora made my anniversary unforgettable with their beautiful
-                  arrangement!
-                </p>
-                <span class="feedback__author">Emma T.</span>
-              </li>
-              <li class="feedback__item">
-                <p class="feedback__text">
-                  Absolutely stunning bouquet! It looked even better than the
-                  photo and arrived right on time.
-                </p>
-                <span class="feedback__author">Daniel R.</span>
-              </li>
-              <li class="feedback__item">
-                <p class="feedback__text">
-                  The service was exceptional, and the flowers were fresh!
-                </p>
-                <span class="feedback__author">Olivia M.</span>
-              </li>
-              <li class="feedback__item">
-                <p class="feedback__text">
-                  Fast delivery and excellent customer care — I will order again!
-                </p>
-                <span class="feedback__author">Mia K.</span>
-              </li>
-              <li class="feedback__item">
-                <p class="feedback__text">
-                  Beautiful bouquet, fresh flowers, and perfect packaging.
-                </p>
-                <span class="feedback__author">Liam S.</span>
-              </li>
-            </ul>
+            <ul class="feedback__list"></ul>
           </div>
           <div class="feedback__controls">
+            <form class="feedback__form">
+  <input
+    class="feedback__input"
+    type="text"
+    name="author"
+    placeholder="Your name"
+    required
+  />
+  <textarea
+    class="feedback__input feedback__textarea"
+    name="comment"
+    placeholder="Your feedback"
+    required
+  ></textarea>
+  <input
+    class="feedback__input"
+    type="number"
+    name="rating"
+    min="1"
+    max="5"
+    value="5"
+    required
+  />
+  <button class="header-btn-big" type="submit">Send feedback</button>
+</form>
             <ul class="feedback__dots">
               <li class="feedback__dot feedback__dot--active"></li>
               <li class="feedback__dot"></li>
@@ -491,13 +428,12 @@
         <button class="header-btn-big" type="button">Explore Bouquets</button>
       </nav>
     </div>
-    <script src="src/js/burger.js" defer></script>
-    
-<script src="src/js/slider.js" defer></script>
-<script src="src/js/feedback.js" defer></script>
-<script src="src/js/modal.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script type="module" src="src/js/catalog.js"></script>
 
+<script src="src/js/burger.js" defer></script>
+<script type="module" src="src/js/slider.js"></script>
+<script type="module" src="src/js/feedback.js"></script>
+<script src="src/js/modal.js" defer></script>
+<script type="module" src="src/js/catalog.js"></script>
   </body>
 </html>

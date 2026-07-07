@@ -1,12 +1,33 @@
+import { fetchTopBouquets } from './api.js';
+
 const slider = document.querySelector('.bestsellers__slider');
 const list = document.querySelector('.bestsellers__list');
-const items = Array.from(document.querySelectorAll('.bestsellers__item'));
 const dotsContainer = document.querySelector('.bestsellers__dots');
 const prevBtn = document.querySelector('[aria-label="Previous"]');
 const nextBtn = document.querySelector('[aria-label="Next"]');
 
-const total = items.length;
-let current = 0; // page index (start position)
+let items = [];
+let total = 0;
+let current = 0;
+
+function createBestsellerMarkup(bouquet) {
+  const img2x = bouquet.img.replace('@1x', '@2x');
+
+  return `
+    <li class="bestsellers__item">
+      <img
+        class="bestsellers__image"
+        src="${bouquet.img}"
+        srcset="${bouquet.img} 1x, ${img2x} 2x"
+        alt="${bouquet.name} bouquet"
+        width="400"
+      />
+      <span class="bestsellers__name">${bouquet.name}</span>
+      <p class="bestsellers__desc">${bouquet.desc}</p>
+      <p class="bestsellers__price">$${bouquet.price}</p>
+    </li>
+  `;
+}
 
 function getVisible() {
   if (window.innerWidth >= 1200) return 3;
@@ -23,10 +44,14 @@ function buildDots() {
   dotsContainer.innerHTML = '';
   const visible = getVisible();
   const pages = Math.max(1, total - visible + 1);
+
   for (let i = 0; i < pages; i++) {
     const li = document.createElement('li');
     li.className = 'bestsellers__dot' + (i === current ? ' bestsellers__dot--active' : '');
-    li.addEventListener('click', () => { current = i; render(true); });
+    li.addEventListener('click', () => {
+      current = i;
+      render(true);
+    });
     dotsContainer.appendChild(li);
   }
 }
@@ -37,6 +62,7 @@ function render(animate) {
   const gap = getGap();
   const itemWidth = (w - gap * (visible - 1)) / visible;
   const max = Math.max(0, total - visible);
+
   current = Math.min(current, max);
 
   items.forEach(item => {
@@ -48,6 +74,7 @@ function render(animate) {
   list.style.transition = animate
     ? 'transform 350ms cubic-bezier(0.4,0,0.2,1)'
     : 'none';
+
   list.style.transform = `translateX(-${current * (itemWidth + gap)}px)`;
 
   const dots = Array.from(dotsContainer.querySelectorAll('.bestsellers__dot'));
@@ -71,6 +98,7 @@ nextBtn.addEventListener('click', () => {
 });
 
 let resizeTimer = null;
+
 window.addEventListener('resize', () => {
   clearTimeout(resizeTimer);
   resizeTimer = setTimeout(() => {
@@ -79,5 +107,19 @@ window.addEventListener('resize', () => {
   }, 120);
 });
 
-buildDots();
-render(false);
+async function initBestsellers() {
+  try {
+    const bouquets = await fetchTopBouquets(6);
+    list.innerHTML = bouquets.map(createBestsellerMarkup).join('');
+
+    items = Array.from(document.querySelectorAll('.bestsellers__item'));
+    total = items.length;
+
+    buildDots();
+    render(false);
+  } catch (error) {
+    console.error('Failed to load top bouquets:', error);
+  }
+}
+
+initBestsellers();
